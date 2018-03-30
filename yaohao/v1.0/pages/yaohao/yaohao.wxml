@@ -1,0 +1,34 @@
+<!--pages/yaohao/yaohao.wxml-->
+<login-tips show="{{loginShow}}"></login-tips>
+<view class='body'>
+  <view class='body-box'>
+
+    <view class='header'>
+      <view class='header-title'>摇号查询</view>
+      <view class='header-data'>
+        <view style='color:#3399ff;'>数据更新: {{numData.mtime}}</view>
+        <!-- <view>下次摇号: {{numData.ntime}}</view> -->
+      </view>
+    </view>
+
+    <form bindsubmit="formSubmit">
+
+
+       <picker bindchange="bindPickerChange" value="{{index}}" range="{{cityData}}">
+        <view class="picker">
+          <view class='city'>
+            <block wx:if="{{!index}}">北京</block>
+            <block wx:else>{{cityData[index]}}</block>
+          </view>
+        </view>
+      </picker> 
+
+      <input class='num' name="input" placeholder='申请编码' maxlength='13' placeholder-style='color:#8a9199'></input>
+
+      <button formType="submit" class='query'>查 询</button>
+    </form>
+     <!-- <view class='hint'>摇号申请编码有效期为3/6个月，请及时登录官网延长有效期</view>  -->
+    <!-- <view class='hint'>摇号编码有效期北京为6个月，其他地区为3个月，请注意及时登录当地摇号官网延长有效期。</view> -->
+
+  </view>
+</view>

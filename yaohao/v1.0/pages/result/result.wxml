@@ -1,0 +1,44 @@
+<!--pages/result/result.wxml-->
+<view class='body'>
+
+  <view class='body-box'>
+    <view class='success' wx:if="{{result}}">
+      <image class='headImg' src='http://i1.dd-img.com/assets/image/1520061117-f9e393aa55dd3b95-280w-280h.png'></image>
+      <view class='success-title'>恭喜您，中签啦！</view>
+      <view class='success-table'>
+        <view class='success-table-title'>
+          <view>城市</view>
+          <view>编码</view>
+          <view>指标类型</view>
+          <view>期号</view>
+          <view>姓名</view>
+          <view>申请人类型</view>
+        </view>
+        <view class='success-table-intro'>
+          <view>{{dataReal.city_name}}</view>
+          <view>{{codeReal}}</view>
+          <view>{{dataReal.quota_name}}</view>
+          <view>{{dataReal.issue}}</view>
+          <view>{{dataReal.apply_name}}</view>
+          <view>{{dataReal.candidate_name}}</view>
+        </view>
+      </view>
+
+      <!-- <button class='share' open-type="share">炫耀一下</button> -->
+
+    </view>
+
+    <view class='failure' wx:if="{{!result}}">
+      <image class='headImg' src='http://i1.dd-img.com/assets/image/1520061117-ccfabeb2131a81ca-280w-280h.png'></image>
+      <view class='failure-intro'>很遗憾，本次摇号未中签</view>
+      <view class='failure-hint'>您可以定制短信自动提醒</view>
+      <button class='share fail' bindtap='onMessage' disabled="{{disBoolean}}">短信自动提醒</button>
+      <!-- <view class="{{succBoolean ? '' : 'none' }}">
+        <view>您已成功定制摇号提醒功能</view>
+        <view>电动邦将在每期摇号结束后为您发送摇号结果短信，请注意查看</view>
+      </view> -->
+    </view>
+
+  </view>
+  <view class='dian'>diandong.com</view>
+</view>

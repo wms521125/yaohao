@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "电动邦摇号助手",
+  "usingComponents": {
+    "login-tips": "/pages/inc/component/login/login"
+  }
+}
